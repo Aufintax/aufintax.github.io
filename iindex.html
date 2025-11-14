@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUFINTAX – Smart Solutions for Complex Numbers</title>
+
+    <style>
+        /* ---------- GLOBAL RESET ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7f6;
+            color: #033a32;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* ---------- NAVIGATION ---------- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #033a32;
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f2a200;
+        }
+
+        /* Mobile Menu */
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #033a32;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 15px 0;
+                text-align: center;
+            }
+
+            nav ul.showMenu {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* ---------- HERO SECTION ---------- */
+        header {
+            background: linear-gradient(
+                    rgba(3, 58, 50, 0.7),
+                    rgba(3, 58, 50, 0.7)
+                ),
+                url("https://images.unsplash.com/photo-1554226820-357c82c56f4e")
+                    center/cover no-repeat;
+            height: 100vh;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            max-width: 900px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-top: 15px;
+            max-width: 700px;
+        }
+
+        /* ---------- BUTTON ---------- */
+        .btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 14px 35px;
+            background: #f2a200;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #d68e00;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 40px;
+        }
+
+        /* ---------- SERVICE CARDS ---------- */
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 6px solid #033a32;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        /* ---------- CONTACT FORM ---------- */
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bbbbbb;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        form button {
+            padding: 14px 25px;
+            background: #033a32;
+            color: white;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #055e4d;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            text-align: center;
+            background: #033a32;
+            color: white;
+            padding: 25px 10px;
+            margin-top: 60px;
+        }
+
+        /* ---------- ANIMATIONS ---------- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">AUFINTAX</div>
+        <div class="menu-icon">☰</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home">
+        <h1 class="fade-in">Smart Solutions for Complex Numbers</h1>
+        <p class="fade-in">
+            We handle your tax filings, bookkeeping, and financial reporting —
+            so you stay focused on growing your business.
+        </p>
+
+        <a href="#services" class="btn fade-in">Explore Services</a>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="fade-in">
+        <h2>Our Services</h2>
+
+        <div class="service-card">
+            <h3>Accurate Monthly & Quarterly VAT Returns</h3>
+            <p>
+                Stay compliant effortlessly. We manage all VAT calculations,
+                documentation, and submissions — ensuring accuracy and avoiding
+                penalties.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Self-Assessment Tax Filing & Consultancy</h3>
+            <p>
+                Whether you're self-employed or managing multiple income
+                sources, we handle filings and provide tailored consultancy to
+                reduce tax burdens legally.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Professional Bookkeeping (QuickBooks, Xero, Sage, Excel)</h3>
+            <p>
+                Clean, organized, and audit-ready bookkeeping using industry
+                leading tools. We maintain your accounts so you always know
+                where your business stands.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Financial Reporting & Reconciliation</h3>
+            <p>
+                We prepare detailed financial statements, monthly reviews, cash
+                flow tracking, and full reconciliation to ensure accuracy and
+                financial clarity.
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="fade-in">
+        <h2>About Us</h2>
+
+        <p>
+            At AUFINTAX, we combine expertise, accuracy, and commitment to
+            deliver high-quality financial services. Our mission is simple:
+            remove the stress from financial management so you can make clear
+            decisions and grow your business.
+        </p>
+
+        <br />
+
+        <ul>
+            <li>✔ Experienced tax and bookkeeping professionals</li>
+            <li>✔ Affordable and transparent pricing</li>
+            <li>✔ Fast and reliable service delivery</li>
+            <li>✔ Personalized consultancy for every client</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade-in">
+        <h2>Contact Us</h2>
+
+        <form action="https://formsubmit.co/YOUR-EMAIL" method="POST">
+            <input type="hidden" name="_captcha" value="false" />
+
+            <input type="text" name="name" placeholder="Your Name" required />
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            />
+
+            <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <br />
+
+        <p><strong>Phone:</strong> +92 339 002 1171</p>
+        <p><strong>Email:</strong> Aufintaxinfo@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>© 2025 AUFINTAX — Smart Solutions for Complex Numbers</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Script
+        const menuIcon = document.querySelector(".menu-icon");
+        const navList = document.querySelector("nav ul");
+
+        menuIcon.addEventListener("click", () => {
+            navList.classList.toggle("showMenu");
+        });
+    </script>
+</body>
+</html>
